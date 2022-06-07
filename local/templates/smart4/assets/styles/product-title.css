@@ -1,0 +1,20 @@
+.products__title{
+  font-size: 30px;
+  color: black;
+  padding: 1% 10%;
+  font-weight: 600;
+}
+.style-text{
+	height: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+.style-text:nth-child(2n){
+  display: flex;
+  justify-content: space-around;
+
+	height: 300px;
+}
+.style-text p{
+	max-width: 300px;
+}
