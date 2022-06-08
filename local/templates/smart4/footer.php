@@ -3,7 +3,7 @@
 <footer class="bg-white">
     <div class="container py-5">
         <div class="row py-4">
-            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="images/logo.png"" width="180" class="mb-3">
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo.png" width="180" class="mb-3">
             </div>
             <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                 <h6 class="text-uppercase font-weight-bold mb-4">МЫ</h6>
