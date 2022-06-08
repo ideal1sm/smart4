@@ -62,6 +62,6 @@
 <script src="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/parallax-js-master/parallax.min.js"></script>
 <script src="<?= SITE_TEMPLATE_PATH ?>/assets/js/custom.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="<?= SITE_TEMPLATE_PATH ?>/assets/./js/slider-main.js"></script>
+<script src="<?= SITE_TEMPLATE_PATH ?>/assets/js/slider-main.js"></script>
 </body>
 </html>

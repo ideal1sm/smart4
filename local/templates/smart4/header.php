@@ -3,26 +3,25 @@
 <html lang="en">
 <head>
     <title>Smart4</title>
-    <? $APPLICATION->ShowHead() ?>
-    <link rel="icon" type="image/gif" href="/images/logo.png">
+    <?php  $APPLICATION->ShowHead(); ?>
+    <link rel="icon" type="image/gif" href="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo.png">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Sublime project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/bootstrap4/bootstrap.min.css">
-    <link href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/responsive.css">
-    <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets//styles/slider.css">
-    <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets//styles/product-title.css">
+    <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/slider.css">
+    <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/product-title.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
-<? $APPLICATION->ShowPanel(); ?>
+<?php $APPLICATION->ShowPanel(); ?>
 <body>
-
 <div class="super_container">
 
     <!-- Header -->
@@ -33,23 +32,39 @@
                 <div class="row">
                     <div class="col">
                         <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                            <div class="logo"><a href="index.html">Smart4</a></div>
+                            <div class="logo"><a href="/">Smart4</a></div>
                             <nav class="main_nav">
-                                <ul>
-                                    <li><a href="index.html">Главное</a></li>
-                                    <li class="hassubs">
-                                        <a href="categories.html">Категории</a>
-                                        <ul>
-                                            <li><a href="categories1.html">Смартфоны</a></li>
-                                            <li><a href="categories1.html">Планшеты</a></li>
-                                            <li><a href="categories1.html">Аксесуары</a></li>
-                                            <li><a href="categories1.html">Ноутбуки</a></li>
-                                            <li><a href="categories1.html">Прочее</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="repair.html">Ремонт</a></li>
-                                    <li><a href="contact.html">О нас</a></li>
-                                </ul>
+                                <? $APPLICATION->IncludeComponent(
+                                    "bitrix:menu",
+                                    "top_menu",
+                                    array(
+                                        "ALLOW_MULTI_SELECT" => "N",
+                                        "CHILD_MENU_TYPE" => "left",
+                                        "DELAY" => "N",
+                                        "MAX_LEVEL" => "1",
+                                        "MENU_CACHE_GET_VARS" => array(0 => "",),
+                                        "MENU_CACHE_TIME" => "3600",
+                                        "MENU_CACHE_TYPE" => "Y",
+                                        "MENU_CACHE_USE_GROUPS" => "Y",
+                                        "ROOT_MENU_TYPE" => "top",
+                                        "USE_EXT" => "N",
+                                    )
+                                ); ?>
+<!--                                <ul>-->
+<!--                                    <li><a href="index.html">Главное</a></li>-->
+<!--                                    <li class="hassubs">-->
+<!--                                        <a href="categories.html">Категории</a>-->
+<!--                                        <ul>-->
+<!--                                            <li><a href="categories1.html">Смартфоны</a></li>-->
+<!--                                            <li><a href="categories1.html">Планшеты</a></li>-->
+<!--                                            <li><a href="categories1.html">Аксесуары</a></li>-->
+<!--                                            <li><a href="categories1.html">Ноутбуки</a></li>-->
+<!--                                            <li><a href="categories1.html">Прочее</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+<!--                                    <li><a href="repair.html">Ремонт</a></li>-->
+<!--                                    <li><a href="contact.html">О нас</a></li>-->
+<!--                                </ul>-->
                             </nav>
                             <div class="header_extra ml-auto">
                                 <div class="shopping_cart">

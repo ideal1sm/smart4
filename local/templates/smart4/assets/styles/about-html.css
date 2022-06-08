@@ -1,0 +1,27 @@
+.about-img{
+  max-width: 400px;
+  max-height: 200px;
+  width: 50%;
+}
+.about-img:nth-child(2n-1){
+  margin-right: 20px;
+}
+.about-img:nth-child(2n){
+  margin-left: 20px;
+}
+.style-text{
+  margin-bottom: 20px;
+}
+.style-text:last-child{
+  margin-bottom: 0px;
+}
+@media screen and (max-width:600px) {
+  .about-text{
+    font-size: 10px;
+  }
+  .about-img{
+    max-width: 400px;
+    max-height: 120px;
+    width: 50%;
+  }
+}
