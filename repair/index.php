@@ -36,44 +36,29 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/contact_resp
             <div class="row">
 
                 <!-- Get in touch -->
-                <div class="col-lg-8 contact_col">
-                    <div class="get_in_touch">
-                        <div class="section_title">Ремонт</div>
-                        <div class="section_subtitle">Оставить запрос</div>
-                        <div class="contact_form_container">
-                            <form action="#" id="contact_form" class="contact_form">
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        <!-- Name -->
-                                        <label for="contact_name">Имя</label>
-                                        <input type="text" id="contact_name" class="contact_input" required="required">
-                                    </div>
-                                    <div class="col-xl-6 last_name_col">
-                                        <!-- Last Name -->
-                                        <label for="contact_last_name">Номер</label>
-                                        <input type="text" id="contact_last_name" class="contact_input" required="required">
-                                    </div>
-                                </div>
-                                <div>
-                                    <!-- Subject -->
-                                    <label for="contact_company">Модель устройства</label>
-                                    <input type="text" id="contact_company" class="contact_input">
-                                </div>
-                                <div>
-                                    <!-- Subject -->
-                                    <label for="contact_company">В чем проблема?</label>
-                                    <input type="text" id="contact_company" class="contact_input">
-                                </div>
-                                <div>
-                                    <label for="contact_textarea">Комментарий</label>
-                                    <textarea id="contact_textarea" class="contact_input contact_textarea" required="required"></textarea>
-                                </div>
-                                <button class="button contact_button"><span>Отправить сообщение</span></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
+                <?
+                $APPLICATION->IncludeComponent(
+                    "custom:form",
+                    "repair_form",
+                    array(
+                        'IBLOCK_ID' => '2',
+                        'MAIL_EVENT' => 'FORM_SENDED',
+                        'RECAPTCHA_ENABLED' => 'N',
+                        'RECAPTCHA_PUBLIC_KEY' => '6LcqwJwdAAAAAGFfWMfSsziyrRMTV0kUARrgOCts',
+                        'RECAPTCHA_PRIVATE_KEY' => '6LcqwJwdAAAAAATrf2Qqm8-KSw_vyhwCuPdTnqN8',
+                        'ACTIVE' => 'Y',
+                        'TOKEN' => 'repair_form001',
+                        'FORM_NAME' => 'Ремонт',
+                        'PROPS' => array(
+                            'NAME', // type - string
+                            'PHONE', // type - string
+                            'MODEL', // type - string
+                            'QUESTION', // type - string
+                            'COMMENT', // type - string
+                        ),
+                    )
+                );
+                ?>
                 <!-- Contact Info -->
                 <div class="col-lg-3 offset-xl-1 contact_col">
                     <div class="contact_info">
@@ -94,8 +79,8 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/contact_resp
                         <div class="contact_info_section">
                             <div class="contact_info_title">Где находимся?</div>
                             <ul>
-                                <li><img src="/images/location.svg"<span>    г.Краснодар Красная4</span></li>
-                                <li><img src="/images/location.svg"<span>    г.Краснодар Мира24</span></li>
+                                <li><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/location.svg"<span>    г.Краснодар Красная4</span></li>
+                                <li><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/location.svg"<span>    г.Краснодар Мира24</span></li>
                             </ul>
                         </div>
                     </div>

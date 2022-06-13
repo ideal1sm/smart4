@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/slider.css">
     <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/product-title.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <?
+    CJSCore::Init(array("jquery"));
+    ?>
 </head>
 <?php $APPLICATION->ShowPanel(); ?>
 <body>
