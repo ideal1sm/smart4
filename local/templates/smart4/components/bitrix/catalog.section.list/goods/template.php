@@ -70,28 +70,25 @@ $this->setFrameMode(true);
     </div>
 </div>
 </div>
-<div class="newsletter">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="newsletter_border"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="newsletter_content text-center">
-                    <div class="newsletter_title">Подпишитесь на нашу рассылку</div>
-                    <div class="newsletter_text"><p>Узнавай о наших скидках одним из мервых!</p></div>
-                    <div class="newsletter_form_container">
-                        <form action="#" id="newsletter_form" class="newsletter_form">
-                            <input type="email" class="newsletter_input" required="required">
-                            <button class="newsletter_button trans_200"><span>Подписывайся</span></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<?
+$APPLICATION->IncludeComponent(
+    "custom:form",
+    "mailing_form",
+    array(
+        'IBLOCK_ID' => '3',
+        'MAIL_EVENT' => 'FORM_SENDED',
+        'RECAPTCHA_ENABLED' => 'N',
+        'RECAPTCHA_PUBLIC_KEY' => '6LcqwJwdAAAAAGFfWMfSsziyrRMTV0kUARrgOCts',
+        'RECAPTCHA_PRIVATE_KEY' => '6LcqwJwdAAAAAATrf2Qqm8-KSw_vyhwCuPdTnqN8',
+        'ACTIVE' => 'Y',
+        'TOKEN' => 'mailing_form002',
+        'FORM_NAME' => 'Рассылка',
+        'PROPS' => array(
+            'EMAIL', // type - string
+        ),
+    )
+);
+?>
 
 
     <!-- Newsletter -->

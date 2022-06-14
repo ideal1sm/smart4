@@ -14,7 +14,13 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 
 $this->setFrameMode(true);
-$this->addExternalCss("/bitrix/css/main/bootstrap.css");
+//$this->addExternalCss("/bitrix/css/main/bootstrap.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/plugins/OwlCarousel2-2.2.1/animate.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/styles/categories.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/styles/categories_responsive.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/styles/product-title.css");
 
 if (!isset($arParams['FILTER_VIEW_MODE']) || (string)$arParams['FILTER_VIEW_MODE'] == '')
 	$arParams['FILTER_VIEW_MODE'] = 'VERTICAL';
@@ -24,8 +30,7 @@ $isVerticalFilter = ('Y' == $arParams['USE_FILTER'] && $arParams["FILTER_VIEW_MO
 $isSidebar = ($arParams["SIDEBAR_SECTION_SHOW"] == "Y" && isset($arParams["SIDEBAR_PATH"]) && !empty($arParams["SIDEBAR_PATH"]));
 $isFilter = ($arParams['USE_FILTER'] == 'Y');
 
-if ($isFilter)
-{
+
 	$arFilter = array(
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 		"ACTIVE" => "Y",
@@ -67,14 +72,12 @@ if ($isFilter)
 		$obCache->EndDataCache($arCurSection);
 	}
 	if (!isset($arCurSection))
+	{
 		$arCurSection = array();
-}
+	}
+	$arCurSection = CIBlockSection::GetByID($arCurSection['ID'])->Fetch();
 ?>
-<div class="row">
+
 <?
-if ($isVerticalFilter)
-	include($_SERVER["DOCUMENT_ROOT"]."/".$this->GetFolder()."/section_vertical.php");
-else
-	include($_SERVER["DOCUMENT_ROOT"]."/".$this->GetFolder()."/section_horizontal.php");
+include($_SERVER["DOCUMENT_ROOT"]."/".$this->GetFolder()."/section_vertical.php");
 ?>
-</div>
