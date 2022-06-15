@@ -11,7 +11,7 @@ $aMenuLinks = Array(
         "Категории",
         "/catalog/",
         Array(),
-        Array(),
+        Array('IS_PARENT' => true),
         ""
     ),
     Array(
@@ -27,6 +27,6 @@ $aMenuLinks = Array(
         Array(),
         Array(),
         ""
-    )
+    ),
 );
 ?>

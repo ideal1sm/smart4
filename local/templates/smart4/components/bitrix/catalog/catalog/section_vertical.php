@@ -17,6 +17,24 @@ if (isset($arParams['USE_COMMON_SETTINGS_BASKET_POPUP']) && $arParams['USE_COMMO
     $basketAction = isset($arParams['SECTION_ADD_TO_BASKET_ACTION']) ? $arParams['SECTION_ADD_TO_BASKET_ACTION'] : '';
 }
 $elemCnt = CIBlockSection::GetSectionElementsCount($arCurSection['ID']);
+switch ($_COOKIE['catalog-sort']) {
+    case 'name':
+        $sortField = 'NAME';
+        $sortOrder = 'asc';
+        break;
+    case 'price-asc':
+        $sortField = 'CATALOG_PRICE_1';
+        $sortOrder = 'asc';
+        break;
+    case 'price-desc':
+        $sortField = 'CATALOG_PRICE_1';
+        $sortOrder = 'desc';
+        break;
+    default:
+        $sortField = 'sort';
+        $sortOrder = 'asc';
+
+}
 if ($isFilter || $isSidebar): ?>
     <div class="col-md-3 col-sm-4 col-sm-push-8 col-md-push-9<?= (isset($arParams['FILTER_HIDE_ON_MOBILE']) && $arParams['FILTER_HIDE_ON_MOBILE'] === 'Y' ? ' hidden-xs' : '') ?>">
         <? if ($isFilter): ?>
@@ -274,9 +292,18 @@ if ($arParams["USE_COMPARE"] == "Y") {
                                     <span class="sorting_text">Сортировать по</span>
                                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                     <ul>
-                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Стандартно</span></li>
-                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Цена</span></li>
-                                        <li class="product_sorting_btn" data-isotope-option='{ "sortBy": "stars" }'><span>Названию</span></li>
+                                        <li class="product_sorting_btn" data-sort="sort">
+                                            <span data-sort="sort">Стандартно</span>
+                                        </li>
+                                        <li class="product_sorting_btn" data-sort="price-desc">
+                                            <span data-sort="price-desc">По убыванию цены</span>
+                                        </li>
+                                        <li class="product_sorting_btn" data-sort="price-asc">
+                                            <span data-sort="price-asc">По возрастанию цены</span>
+                                        </li>
+                                        <li class="product_sorting_btn" data-sort="name">
+                                            <span data-sort="name">Названию</span>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -290,10 +317,10 @@ if ($arParams["USE_COMPARE"] == "Y") {
                     array(
                         "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
                         "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-                        "ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
-                        "ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
-                        "ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
-                        "ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
+                        "ELEMENT_SORT_FIELD" => $sortField,
+                        "ELEMENT_SORT_ORDER" => $sortOrder,
+                        "ELEMENT_SORT_FIELD2" => $sortField,
+                        "ELEMENT_SORT_ORDER2" => $sortField,
                         "PROPERTY_CODE" => (isset($arParams["LIST_PROPERTY_CODE"]) ? $arParams["LIST_PROPERTY_CODE"] : []),
                         "PROPERTY_CODE_MOBILE" => $arParams["LIST_PROPERTY_CODE_MOBILE"],
                         "META_KEYWORDS" => $arParams["LIST_META_KEYWORDS"],
@@ -550,3 +577,28 @@ if (ModuleManager::isModuleInstalled("sale")) {
     }
 }
 ?>
+<?
+$APPLICATION->IncludeComponent(
+    "custom:form",
+    "mailing_form",
+    array(
+        'IBLOCK_ID' => '3',
+        'MAIL_EVENT' => 'FORM_SENDED',
+        'RECAPTCHA_ENABLED' => 'N',
+        'RECAPTCHA_PUBLIC_KEY' => '6LcqwJwdAAAAAGFfWMfSsziyrRMTV0kUARrgOCts',
+        'RECAPTCHA_PRIVATE_KEY' => '6LcqwJwdAAAAAATrf2Qqm8-KSw_vyhwCuPdTnqN8',
+        'ACTIVE' => 'Y',
+        'TOKEN' => 'mailing_form003',
+        'FORM_NAME' => 'Рассылка',
+        'PROPS' => array(
+            'EMAIL', // type - string
+        ),
+    )
+);
+?>
+<script>
+    $('.product_sorting_btn span').click((e) => {
+        document.cookie = 'catalog-sort=' + e.target.dataset.sort;
+        location.reload();
+    })
+</script>

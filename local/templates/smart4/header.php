@@ -50,7 +50,7 @@
                                         "MENU_CACHE_TYPE" => "Y",
                                         "MENU_CACHE_USE_GROUPS" => "Y",
                                         "ROOT_MENU_TYPE" => "top",
-                                        "USE_EXT" => "N",
+                                        "USE_EXT" => "Y",
                                     )
                                 ); ?>
 <!--                                <ul>-->
@@ -71,7 +71,7 @@
                             </nav>
                             <div class="header_extra ml-auto">
                                 <div class="shopping_cart">
-                                    <a href="cart.html">
+                                    <a href="/personal/cart">
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                              viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
 											<g>
