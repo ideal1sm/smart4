@@ -1,0 +1,3 @@
+[submodule "local/components/custom/local/components/custom/form"]
+	path = local/components/custom/local/components/custom/form
+	url = https://github.com/bitrix-library/bx-form-component
