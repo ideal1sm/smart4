@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Предзаказ";
+$arDirProperties = Array(
+
+);
+?>
