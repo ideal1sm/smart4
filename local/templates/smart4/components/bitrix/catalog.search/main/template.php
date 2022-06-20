@@ -121,7 +121,7 @@ if (!empty($searchFilter) && is_array($searchFilter))
                 <?php $componentParams = array(
                         "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
                         "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-                        "PAGE_ELEMENT_COUNT" => '5',
+                        "PAGE_ELEMENT_COUNT" => '12',
                         "LINE_ELEMENT_COUNT" => '5',
                         "PROPERTY_CODE" => $arParams["PROPERTY_CODE"],
                         "PROPERTY_CODE_MOBILE" => (isset($arParams["PROPERTY_CODE_MOBILE"]) ? $arParams["PROPERTY_CODE_MOBILE"] : []),
@@ -223,10 +223,9 @@ if (!empty($searchFilter) && is_array($searchFilter))
                         'COMPARE_NAME' => (isset($arParams['COMPARE_NAME']) ? $arParams['COMPARE_NAME'] : ''),
                         'USE_COMPARE_LIST' => (isset($arParams['USE_COMPARE_LIST']) ? $arParams['USE_COMPARE_LIST'] : '')
                     ) + $elementOrder;
-
                 $APPLICATION->IncludeComponent(
                     "bitrix:catalog.section",
-                    "search",
+                    "goods",
                     $componentParams,
                     $arResult["THEME_COMPONENT"],
                     array('HIDE_ICONS' => 'Y')

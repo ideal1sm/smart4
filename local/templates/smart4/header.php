@@ -3,17 +3,21 @@
 <html lang="en">
 <head>
     <title>Smart4</title>
-    <?php  $APPLICATION->ShowHead(); ?>
+    <?php $APPLICATION->ShowHead(); ?>
     <link rel="icon" type="image/gif" href="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo.png">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Sublime project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/bootstrap4/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css"
+          href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css"
+          href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css"
+          href="<?= SITE_TEMPLATE_PATH ?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/responsive.css">
     <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/styles/slider.css">
@@ -53,27 +57,14 @@
                                         "USE_EXT" => "Y",
                                     )
                                 ); ?>
-<!--                                <ul>-->
-<!--                                    <li><a href="index.html">Главное</a></li>-->
-<!--                                    <li class="hassubs">-->
-<!--                                        <a href="categories.html">Категории</a>-->
-<!--                                        <ul>-->
-<!--                                            <li><a href="categories1.html">Смартфоны</a></li>-->
-<!--                                            <li><a href="categories1.html">Планшеты</a></li>-->
-<!--                                            <li><a href="categories1.html">Аксесуары</a></li>-->
-<!--                                            <li><a href="categories1.html">Ноутбуки</a></li>-->
-<!--                                            <li><a href="categories1.html">Прочее</a></li>-->
-<!--                                        </ul>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="repair.html">Ремонт</a></li>-->
-<!--                                    <li><a href="contact.html">О нас</a></li>-->
-<!--                                </ul>-->
                             </nav>
                             <div class="header_extra ml-auto">
                                 <div class="shopping_cart">
                                     <a href="/personal/cart">
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                             viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                             viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;"
+                                             xml:space="preserve">
 											<g>
                                                 <path d="M440.1,422.7l-28-315.3c-0.6-7-6.5-12.3-13.4-12.3h-57.6C340.3,42.5,297.3,0,244.5,0s-95.8,42.5-96.6,95.1H90.3
 													c-7,0-12.8,5.3-13.4,12.3l-28,315.3c0,0.4-0.1,0.8-0.1,1.2c0,35.9,32.9,65.1,73.4,65.1h244.6c40.5,0,73.4-29.2,73.4-65.1
@@ -82,7 +73,7 @@
 													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z"/>
                                             </g>
 										</svg>
-                                        <div>Корзина<span>(0)</span></div>
+                                        <div>Корзина</div>
                                     </a>
                                 </div>
 
@@ -98,13 +89,14 @@
                                 <div class="header__area-contacts">
 
 
-
                                 </div>
 
                                 <div class="search">
                                     <div class="search_icon">
-                                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                             viewBox="0 0 475.084 475.084" style="enable-background:new 0 0 475.084 475.084;"
+                                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                             viewBox="0 0 475.084 475.084"
+                                             style="enable-background:new 0 0 475.084 475.084;"
                                              xml:space="preserve">
 										<g>
                                             <path d="M464.524,412.846l-97.929-97.925c23.6-34.068,35.406-72.047,35.406-113.917c0-27.218-5.284-53.249-15.852-78.087
@@ -135,13 +127,33 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="search_panel_content d-flex flex-row align-items-center justify-content-end">
-                            <form action="#">
-                                <input type="text" class="search_input" placeholder="Поиск" required="required">
-                            </form>
-                        </div>
+                        <? $APPLICATION->IncludeComponent(
+                            "bitrix:search.title",
+                            "main",
+                            array(
+                                "CATEGORY_0" => array("iblock_catalog"),
+                                "CATEGORY_0_TITLE" => "Каталоги",
+                                "CATEGORY_0_iblock_catalog" => array("4"),
+                                "CHECK_DATES" => "N",
+                                "CONTAINER_ID" => "title-search",
+                                "INPUT_ID" => "title-search-input",
+                                "NUM_CATEGORIES" => "1",
+                                "ORDER" => "date",
+                                "PAGE" => "#SITE_DIR#catalog/search.php",
+                                "SHOW_INPUT" => "Y",
+                                "SHOW_OTHERS" => "N",
+                                "SHOW_PREVIEW" => "N",
+                                "TOP_COUNT" => "5",
+                                "USE_LANGUAGE_GUESS" => "N"
+                            ),
+                        ); ?>
                     </div>
                 </div>
+<!--                <div class="search_panel_content d-flex flex-row align-items-center justify-content-end">-->
+<!--                    <form action="#">-->
+<!--                        <input type="text" class="search_input" placeholder="Поиск" required="required">-->
+<!--                    </form>-->
+<!--                </div>-->
             </div>
         </div>
 
@@ -157,24 +169,41 @@
 
                 <div class="page_menu_search menu_mm">
                     <form action="#">
-                        <input type="search" required="required" class="page_menu_search_input menu_mm" placeholder="Search for products...">
+                        <input type="search" required="required" class="page_menu_search_input menu_mm"
+                               placeholder="Search for products...">
                     </form>
                 </div>
-                <ul class="page_menu_nav menu_mm">
-                    <li class="page_menu_item menu_mm"><a href="index.html">Главное<i class="fa fa-angle-down"></i></a></li>
-                    <li class="page_menu_item has-children menu_mm">
-                        <a href="categories.html">Категории<i class="fa fa-angle-down"></i></a>
-                        <ul class="page_menu_selection menu_mm">
-                            <li class="page_menu_item menu_mm"><a href="categories1.html">Смартфоны<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="categories1.html">Планшеты<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="categories1.html">Аксесуары<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="categories1.html">Ноутбуки<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="categories1.html">Прочее<i class="fa fa-angle-down"></i></a></li>
-                        </ul>
-                    </li>
-                    <li class="page_menu_item menu_mm"><a href="repair.html">Ремонт<i class="fa fa-angle-down"></i></a></li>
-                    <li class="page_menu_item menu_mm"><a href="contact.html">О нас<i class="fa fa-angle-down"></i></a></li>
-                </ul>
+                <? $APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "top_menu_mobile",
+                    array(
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "CHILD_MENU_TYPE" => "left",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => "1",
+                        "MENU_CACHE_GET_VARS" => array(0 => "",),
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_TYPE" => "Y",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "ROOT_MENU_TYPE" => "top",
+                        "USE_EXT" => "Y",
+                    )
+                ); ?>
+                <!--                <ul class="page_menu_nav menu_mm">-->
+                <!--                    <li class="page_menu_item menu_mm"><a href="index.html">Главное<i class="fa fa-angle-down"></i></a></li>-->
+                <!--                    <li class="page_menu_item has-children menu_mm">-->
+                <!--                        <a href="categories.html">Категории<i class="fa fa-angle-down"></i></a>-->
+                <!--                        <ul class="page_menu_selection menu_mm">-->
+                <!--                            <li class="page_menu_item menu_mm"><a href="categories1.html">Смартфоны<i class="fa fa-angle-down"></i></a></li>-->
+                <!--                            <li class="page_menu_item menu_mm"><a href="categories1.html">Планшеты<i class="fa fa-angle-down"></i></a></li>-->
+                <!--                            <li class="page_menu_item menu_mm"><a href="categories1.html">Аксесуары<i class="fa fa-angle-down"></i></a></li>-->
+                <!--                            <li class="page_menu_item menu_mm"><a href="categories1.html">Ноутбуки<i class="fa fa-angle-down"></i></a></li>-->
+                <!--                            <li class="page_menu_item menu_mm"><a href="categories1.html">Прочее<i class="fa fa-angle-down"></i></a></li>-->
+                <!--                        </ul>-->
+                <!--                    </li>-->
+                <!--                    <li class="page_menu_item menu_mm"><a href="repair.html">Ремонт<i class="fa fa-angle-down"></i></a></li>-->
+                <!--                    <li class="page_menu_item menu_mm"><a href="contact.html">О нас<i class="fa fa-angle-down"></i></a></li>-->
+                <!--                </ul>-->
             </div>
         </div>
 
@@ -182,3 +211,31 @@
 
 
     </div>
+    <?php if (!CSite::InDir('/index.php') && !CSite::InDir('/catalog/')): ?>
+        <div class="home">
+            <div class="home_container">
+                <div class="home_background"
+                     style="background-image:url(<?= SITE_TEMPLATE_PATH ?>/assets/images/cart.jpg)"></div>
+                <div class="home_content_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="home_content">
+                                    <? $APPLICATION->IncludeComponent(
+                                        "bitrix:breadcrumb",
+                                        "top_navigate",
+                                        array(
+                                            "START_FROM" => "0",
+                                            "PATH" => "",
+                                            "SITE_ID" => "s1"
+                                        )
+                                    );
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <? endif; ?>

@@ -30,9 +30,8 @@
 
                 data.append('TOKEN', '<?=$arParams['TOKEN']?>')
                 data.append('NAME', $('#form_<?=$arParams['TOKEN']?> *[name="name"]').val())
-                data.append('PHONE', $('#form_<?=$arParams['TOKEN']?> *[name="phone"]').val())
-                data.append('MODEL', $('#form_<?=$arParams['TOKEN']?> *[name="model"]').val())
-                data.append('QUESTION', $('#form_<?=$arParams['TOKEN']?> *[name="question"]').val())
+                data.append('LASTNAME', $('#form_<?=$arParams['TOKEN']?> *[name="lastname"]').val())
+                data.append('THEME', $('#form_<?=$arParams['TOKEN']?> *[name="theme"]').val())
                 data.append('COMMENT', $('#form_<?=$arParams['TOKEN']?> *[name="comment"]').val())
 
                 $.ajax({

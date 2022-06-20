@@ -42,10 +42,9 @@ else
 {
 	$basketAction = (isset($arParams['SECTION_ADD_TO_BASKET_ACTION']) ? $arParams['SECTION_ADD_TO_BASKET_ACTION'] : '');
 }
-
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog.search",
-	"",
+	"main",
 	array(
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],

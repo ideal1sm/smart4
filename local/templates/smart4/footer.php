@@ -7,29 +7,61 @@
             </div>
             <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                 <h6 class="text-uppercase font-weight-bold mb-4">МЫ</h6>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-2"><a href="contact.html" class="text-muted">Контакты</a></li>
-                    <li class="mb-2"><a href="about.html" class="text-muted">О компании</a></li>
-                    <li class="mb-2"><a href="warranty.html" class="text-muted">Гарантия</a></li>
-                </ul>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "bottom_menu",
+                        array(
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "left",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "1",
+                            "MENU_CACHE_GET_VARS" => array(0 => "",),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "Y",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "ROOT_MENU_TYPE" => "bottom",
+                            "USE_EXT" => "Y",
+                        )
+                    ); ?>
             </div>
             <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                 <h6 class="text-uppercase font-weight-bold mb-4">Каталог</h6>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-2"><a href="categories1.html" class="text-muted">Смартфоны</a></li>
-                    <li class="mb-2"><a href="categories1.html" class="text-muted">Планшеты</a></li>
-                    <li class="mb-2"><a href="categories1.html" class="text-muted">Аксесуары</a></li>
-                    <li class="mb-2"><a href="categories1.html" class="text-muted">Ноутбуки</a></li>
-                    <li class="mb-2"><a href="categories1.html" class="text-muted">Прочее</a></li>
-                </ul>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "bottom_menu",
+                        array(
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "left",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "1",
+                            "MENU_CACHE_GET_VARS" => array(0 => "",),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "Y",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "ROOT_MENU_TYPE" => "bottom2",
+                            "USE_EXT" => "Y",
+                        )
+                    ); ?>
             </div>
 
             <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                 <h6 class="text-uppercase font-weight-bold mb-4">Доп.сервисы</h6>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-2"><a href="repair.html" class="text-muted">Ремонт</a></li>
-                    <li class="mb-2"><a href="soon.html" class="text-muted">Предзаказ</a></li>
-                </ul>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "bottom_menu",
+                        array(
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "left",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "1",
+                            "MENU_CACHE_GET_VARS" => array(0 => "",),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "Y",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "ROOT_MENU_TYPE" => "bottom3",
+                            "USE_EXT" => "Y",
+                        )
+                    ); ?>
             </div>
 
         </div>

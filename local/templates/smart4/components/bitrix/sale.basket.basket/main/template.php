@@ -124,9 +124,10 @@ if ($arParams['USE_GIFTS'] === 'Y') {
 
 \CJSCore::Init(array('fx', 'popup', 'ajax'));
 
-$this->addExternalCss('/bitrix/css/main/bootstrap.css');
-$this->addExternalCss($templateFolder . '/themes/' . $arParams['TEMPLATE_THEME'] . '/style.css');
-
+//$this->addExternalCss('/bitrix/css/main/bootstrap.css');
+//$this->addExternalCss($templateFolder . '/themes/' . $arParams['TEMPLATE_THEME'] . '/style.css');
+$this->addExternalCss(SITE_TEMPLATE_PATH . '/assets/styles/cart.css');
+$this->addExternalCss(SITE_TEMPLATE_PATH . '/assets/styles/cart_responsive.css');
 $this->addExternalJs($templateFolder . '/js/mustache.js');
 $this->addExternalJs($templateFolder . '/js/action-pool.js');
 $this->addExternalJs($templateFolder . '/js/filter.js');
@@ -175,25 +176,20 @@ if (empty($arResult['ERROR_MESSAGE'])) {
         <?
     }
     ?>
-    <div class="page-top">
+    <div class="cart_info">
         <div class="container">
-            <div class="page-top__inner">
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:breadcrumb",
-                    "top_navigate",
-                    array(
-                        "PATH" => "",
-                        "SITE_ID" => "s1",
-                        "START_FROM" => "0"
-                    )
-                ); ?>
-                <h1><?= $APPLICATION->GetTitle() ?></h1>
-            </div>
-        </div>
-    </div>
-    <div class="cart-in">
-        <div class="container">
-            <div id="basket-root" class="cart-in__inner" style="opacity: 0;">
+            <div id="basket-root" class="" style="opacity: 0;">
+                <div class="row">
+                    <div class="col">
+                        <!-- Column Titles -->
+                        <div class="cart_info_columns clearfix">
+                            <div class="cart_info_col cart_info_col_product">Заказ</div>
+                            <div class="cart_info_col cart_info_col_price">Цена</div>
+                            <div class="cart_info_col cart_info_col_quantity">Количество</div>
+                            <div class="cart_info_col cart_info_col_total">Всего к оплате</div>
+                        </div>
+                    </div>
+                </div>
                 <?
                 if (
                     $arParams['BASKET_WITH_ORDER_INTEGRATION'] !== 'Y'
@@ -218,15 +214,26 @@ if (empty($arResult['ERROR_MESSAGE'])) {
                         </div>
                     </div>
                 </div>
-                <div class="cart-in__left" id="basket-item-table"></div>
+                <div class="row cart_items_row">
+                    <div class="col" id="basket-item-table"></div>
+                </div>
+                <div class="row row_cart_buttons">
+                    <div class="col">
+                        <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
+                            <div class="button continue_shopping_button"><a href="/catalog">Продолжить покупки</a></div>
+                            <div class="cart_buttons_right ml-lg-auto">
+                                <div class="button clear_cart_button" id="clearBsk"><a href="javascript:void(0)">Очистит корзину</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <?
                 if (
                     $arParams['BASKET_WITH_ORDER_INTEGRATION'] !== 'Y'
                     && in_array('bottom', $arParams['TOTAL_BLOCK_DISPLAY'])
                 ) {
                     ?>
-                    <div class="cart-in__all" data-entity="basket-total-block">
-                    </div>
+                        <div class="row row_extra" data-entity="basket-total-block"></div>
                     <?
                 }
                 ?>
@@ -307,3 +314,21 @@ if (empty($arResult['ERROR_MESSAGE'])) {
 } else {
     ShowError($arResult['ERROR_MESSAGE']);
 }
+?>
+<script>
+    let clearBtn = document.querySelector('#clearBsk');
+    clearBtn.onclick = () => {
+        $.ajax({
+            url: '/local/ajax/clearBskt.php',
+            method: 'post',
+            dataType: 'html',
+            data: {text: 'clear'},
+            success: function (data){
+                console.log(data)
+                if (data === 'ok') {
+                    location.reload()
+                }
+            }
+        })
+    }
+</script>

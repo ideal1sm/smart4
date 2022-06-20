@@ -5,31 +5,6 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/contact.css"
 $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/contact_responsive.css");
 $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/product-title.css");
 ?>
-    <!-- Home -->
-
-    <div class="home">
-        <div class="home_container">
-            <div class="home_background" style="background-image:url(<?= SITE_TEMPLATE_PATH ?>/assets/images/cart.jpg)"></div>
-            <div class="home_content_container">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="home_content">
-                                <div class="breadcrumbs">
-                                    <ul>
-                                        <li><a href="index.html">Главное</a></li>
-                                        <li><a href="contact.html">Контакты</a></li>
-                                        <li>О компании</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Contact -->
 
     <div class="contact">

@@ -23,9 +23,9 @@ if ($CONTAINER_ID == '')
 $CONTAINER_ID = CUtil::JSEscape($CONTAINER_ID);
 
 if ($arParams["SHOW_INPUT"] !== "N"):?>
-    <div class="header-mid__group-search-tt-in" id="<? echo $CONTAINER_ID ?>">
+    <div class="search_panel_content d-flex flex-row align-items-center justify-content-end" id="<? echo $CONTAINER_ID ?>">
         <form action="<? echo $arResult["FORM_ACTION"] ?>">
-            <input id="<? echo $INPUT_ID ?>" type="text" placeholder="Поиск по каталогу" name="q" value="" size="40"
+            <input class="search_input" id="<? echo $INPUT_ID ?>" type="text" placeholder="Поиск по каталогу" name="q" value="" size="40"
                    maxlength="50" autocomplete="off" autofocus/>
             <button name="" class="button" type="submit">
                 <svg>

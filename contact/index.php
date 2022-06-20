@@ -52,8 +52,8 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/contact_resp
                         <div class="contact_info_section">
                             <div class="contact_info_title">Где находимся?</div>
                             <ul>
-                                <li><img src="/images/location.svg"<span>    г.Краснодар Красная4</span></li>
-                                <li><img src="/images/location.svg"<span>    г.Краснодар Мира24</span></li>
+                                <li><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/location.svg"<span>    г.Краснодар Красная 4</span></li>
+                                <li><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/location.svg"<span>    г.Краснодар Мира 24</span></li>
                             </ul>
                         </div>
                     </div>
@@ -75,5 +75,6 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/contact_resp
             </div>
         </div>
     </div>
-
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+    <script src="<?= SITE_TEMPLATE_PATH ?>/assets/js/contact.js"></script>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

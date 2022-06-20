@@ -18,7 +18,7 @@ $this->setFrameMode(true);
 ?>
 <!-- Home -->
 <script>
-    var path = '<?=$arResult['ORIGINAL_PARAMETERS']['SECTION_CODE'];?>/';
+    var path = '<?= $arResult['ORIGINAL_PARAMETERS']['SECTION_CODE']; ?>/';
 </script>
 <div class="home">
     <div class="home_container">
@@ -65,13 +65,14 @@ $this->setFrameMode(true);
             <div class="col-lg-6">
                 <div class="details_content">
                     <div class="details_name"><?= $arResult['NAME'] ?></div>
-<!--                    <div class="details_discount">--><?//= $arResult['PRICES']['base']['PRINT_VALUE'] ?><!--</div>-->
+                    <!--                    <div class="details_discount">-->
+                    <? //= $arResult['PRICES']['base']['PRINT_VALUE'] ?><!--</div>-->
                     <div class="details_price"><?= $arResult['PRICES']['base']['PRINT_VALUE'] ?></div>
 
                     <!-- In Stock -->
                     <div class="in_stock_container">
                         <div class="availability">Доступность:</div>
-                        <?php if($arResult['PRICES']['base']['CAN_BUY'] === 'Y'): ?>
+                        <?php if ($arResult['PRICES']['base']['CAN_BUY'] === 'Y'): ?>
                             <span>В наличии</span>
                         <?php else: ?>
                             <span>Нет в наличии</span>
@@ -82,61 +83,63 @@ $this->setFrameMode(true);
                     </div>
 
                     <!-- Product Quantity -->
+                    <form action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data"
+                          class="add2cart">
+                        <input type="hidden" name="action" value="ADD2BASKET">
+                        <input type="hidden" name="ajax_basket" value="Y">
+                        <input type="hidden" name="<? echo $arParams["PRODUCT_ID_VARIABLE"] ?>"
+                               value="<?= $arResult['ID'] ?>" class="id-offer">
                     <div class="product_quantity_container">
-                        <div class="product_quantity clearfix">
-                            <span>Кол-во</span>
-                            <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-                            <div class="quantity_buttons">
-                                <div id="quantity_inc_button" class="quantity_inc quantity_control"><i
-                                            class="fa fa-chevron-up" aria-hidden="true"></i></div>
-                                <div id="quantity_dec_button" class="quantity_dec quantity_control"><i
-                                            class="fa fa-chevron-down" aria-hidden="true"></i></div>
-                            </div>
-                        </div>
-                        <form action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data"
-                              class="add2cart">
-                            <input type="hidden" name="action" value="ADD2BASKET">
-                            <input type="hidden" name="ajax_basket" value="Y">
-                            <input type="hidden" name="<? echo $arParams["PRODUCT_ID_VARIABLE"] ?>"
-                                   value="<?= $arResult['ID'] ?>" class="id-offer">
-                                <button type="submit" name="<?= $arParams["ACTION_VARIABLE"] . "ADD2BASKET" ?>">Добавить в корзини</button>
+<!--                        <div class="product_quantity clearfix">-->
+<!--                            <span>Кол-во</span>-->
+<!--                            <input type="text" name="QUANTITY" value="1" class="form-control" id="QUANTITY--><?//= $arResult['ID'] ?><!--">-->
+<!--                            <div class="quantity_buttons">-->
+<!--                                <div id="quantity_inc_button" class="quantity_inc quantity_control"><i-->
+<!--                                            class="fa fa-chevron-up" aria-hidden="true"></i></div>-->
+<!--                                <div id="quantity_dec_button" class="quantity_dec quantity_control"><i-->
+<!--                                            class="fa fa-chevron-down" aria-hidden="true"></i></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                            <button type="submit" name="<?= $arParams["ACTION_VARIABLE"] . "ADD2BASKET" ?>">Добавить в
+                                корзини
+                            </button>
                     </div>
                     </form>
 
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Products -->
-
-<div class="products">
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <div class="products_title">С этим товаром покупают</div>
-            </div>
-        </div>
-        <?php
-        $GLOBALS['arrFilter'] = array('ID' => $arResult['PROPERTIES']['ALSO_BUY']['VALUE']);
-        $intSectionID = $APPLICATION->IncludeComponent(
-            "bitrix:catalog.section",
-            "goods",
-            array(
-                "IBLOCK_TYPE" => 'catalog',
-                "IBLOCK_ID" => '4',
-                'LINE_ELEMENT_COUNT' => '4',
-                'FILTER_NAME' => 'arrFilter',
-                'SHOW_ALL_WO_SECTION' => 'Y',
-            ),
-        );
-        unset($GLOBALS['arrFilter']);
-        ?>
-    </div>
 </div>
 
+<!-- Products -->
+<?php if (!empty($arResult['PROPERTIES']['ALSO_BUY']['VALUE'])): ?>
+    <div class="products">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="products_title">С этим товаром покупают</div>
+                </div>
+            </div>
+            <?php
+            $GLOBALS['arrFilter'] = array('ID' => $arResult['PROPERTIES']['ALSO_BUY']['VALUE']);
+            $intSectionID = $APPLICATION->IncludeComponent(
+                "bitrix:catalog.section",
+                "goods",
+                array(
+                    "IBLOCK_TYPE" => 'catalog',
+                    "IBLOCK_ID" => '4',
+                    'LINE_ELEMENT_COUNT' => '4',
+                    'FILTER_NAME' => 'arrFilter',
+                    'SHOW_ALL_WO_SECTION' => 'Y',
+                ),
+            );
+            unset($GLOBALS['arrFilter']);
+            ?>
+        </div>
+    </div>
+<? endif; ?>
 <!-- Newsletter -->
 
 <?

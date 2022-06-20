@@ -12,21 +12,16 @@ global $APPLICATION;
 if (empty($arResult))
     return "";
 $strReturn = '';
-$strReturn .= '<div class="breadcrumb-block">
-          <ol class="breadcrumb">';
+$strReturn .= '<div class="breadcrumbs">
+          <ul>';
 $itemSize = count($arResult);
 for ($index = 0; $index < $itemSize; $index++) {
     $title = htmlspecialcharsex($arResult[$index]["TITLE"]);
     if ($arResult[$index]["LINK"] <> "" && $index != $itemSize - 1) {
-        if ($arResult[$index]['LINK'] === '/personal/'){
-            $strReturn .= '<li class="breadcrumb-item"><a href="' . $arResult[$index]["LINK"] . '" itemprop="item" style="pointer-events:none;">' . $title . '</a></li>';
-        }
-        else{
-            $strReturn .= '<li class="breadcrumb-item"><a href="' . $arResult[$index]["LINK"] . '" itemprop="item">' . $title . '</a></li>';
-        }
+        $strReturn .= '<li><a href="' . $arResult[$index]["LINK"] . '" itemprop="item">' . $title . '</a></li>';
     }
     else {
-        $strReturn .= '<li class="breadcrumb-item active">' . $title . '</li> ';
+        $strReturn .= '<li>' . $title . '</li> ';
     }
 }
 $strReturn .= '</ol>

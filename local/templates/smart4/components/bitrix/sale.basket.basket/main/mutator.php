@@ -31,7 +31,6 @@ foreach ($this->basketItems as $row)
         $row['OLD_PRICE'] = $db_el['PROPERTY_OLD_PRICE_VALUE'];
         $row['BRAND'] = $db_el['PROPERTY_BRANDS_VALUE'];
     }
-//    dump($row);
 	$rowData = array(
 		'ID' => $row['ID'],
 		'PRODUCT_ID' => $row['PRODUCT_ID'],

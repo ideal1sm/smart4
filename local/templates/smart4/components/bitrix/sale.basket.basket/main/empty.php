@@ -1,32 +1,28 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 use Bitrix\Main\Localization\Loc;
+$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/categories.css");
+$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/categories_responsive.css");
+$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/contact.css");
+$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/styles/product-title.css");
 ?>
-<div class="enter th" style="background-image: url('<?= SITE_TEMPLATE_PATH ?>/assets/images/enter-bg3.jpg')">
-    <div class="page-top">
-        <div class="container">
-            <div class="page-top__inner">
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:breadcrumb",
-                    "top_navigate",
-                    array(
-                        "PATH" => "",
-                        "SITE_ID" => "s1",
-                        "START_FROM" => "0"
-                    )
-                ); ?>
-                <h1><?= $APPLICATION->GetTitle() ?></h1>
+<div class="newsletter">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="newsletter_border"></div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="enter__inner">
-            <div class="enter__form">
-                <div class="enter__form-in">
-                    <h2>В корзине пока ничего нет</h2>
-                    <div class="enter__top-tx">Перейдите в каталог или воспользуйтесь<br> поиском, если ищете что-то конкретное</div><a class="button button-primary" href="/catalog">перейти в каталог</a>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="newsletter_content text-center">
+                    <div class="newsletter_title">Ничего не найдено</div>
+                    <div class="newsletter_text"><p>Перейдите в каталог или воспользуйтесь поиском</p></div>
+                    <button class="newsletter_button trans_200"><a href="/catalog"><span>Перейдите в каталог</span></a></button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
