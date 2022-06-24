@@ -1,6 +1,10 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Главная');
+if(CModule::IncludeModule("catalog"))
+{
+    $basePrice = CCatalogGroup::GetBaseGroup();
+}
 ?>
                 <?
                 $APPLICATION->IncludeComponent(
@@ -104,85 +108,34 @@ $APPLICATION->SetTitle('Главная');
         <div class="container">
             <div class="row">
                 <div class="col">
-
                     <!-- <div class="product_grid"> -->
+                    <?
+                    $GLOBALS['arrFilter'] = array('PROPERTY_POPULAR_VALUE' => 'Да');
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:catalog.section",
+                        "row",
+                        array(
+                            "IBLOCK_TYPE" => 'catalog',
+                            "IBLOCK_ID" => '4',
+                            "ELEMENT_SORT_FIELD" => 'sort',
+                            "ELEMENT_SORT_ORDER" => 'asc',
+                            "ELEMENT_SORT_FIELD2" => '',
+                            "ELEMENT_SORT_ORDER2" => '',
+                            'PAGE_ELEMENT_COUNT' => 100,
+                            'FILTER_NAME' => 'arrFilter',
+                            'PROPERTY_CODE' => array(
+                                'NEW',
+                                'POPULAR',
+                                'PROMO'
+                            ),
+                            'PRICE_CODE' => $basePrice,
+                            "SECTION_CODE" => '',
+                            'SHOW_ALL_WO_SECTION' => 'Y',
 
-                    <div class="swiper swiper-top">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар1</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар2</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар3</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар4</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар5</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар6</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар7</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
+                        ),
+                    );
+                    unset($GLOBALS['arrFilter']);
+                    ?>
                     <!-- </div> -->
 
                 </div>
@@ -216,82 +169,33 @@ $APPLICATION->SetTitle('Главная');
 
                     <!-- <div class="product_grid"> -->
 
-                    <div class="swiper swiper-top">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар1</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар2</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар3</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар4</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар5</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар6</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар7</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
+                    <?
+                    $GLOBALS['arrFilter'] = array('PROPERTY_PROMO_VALUE' => 'Да');
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:catalog.section",
+                        "row",
+                        array(
+                            "IBLOCK_TYPE" => 'catalog',
+                            "IBLOCK_ID" => '4',
+                            "ELEMENT_SORT_FIELD" => 'sort',
+                            "ELEMENT_SORT_ORDER" => 'asc',
+                            "ELEMENT_SORT_FIELD2" => '',
+                            "ELEMENT_SORT_ORDER2" => '',
+                            'PAGE_ELEMENT_COUNT' => 100,
+                            'FILTER_NAME' => 'arrFilter',
+                            'PROPERTY_CODE' => array(
+                                'NEW',
+                                'POPULAR',
+                                'PROMO'
+                            ),
+                            'PRICE_CODE' => $basePrice,
+                            "SECTION_CODE" => '',
+                            'SHOW_ALL_WO_SECTION' => 'Y',
+
+                        ),
+                    );
+                    unset($GLOBALS['arrFilter']);
+                    ?>
                     <!-- </div> -->
 
                 </div>
@@ -328,82 +232,33 @@ $APPLICATION->SetTitle('Главная');
 
                     <!-- <div class="product_grid"> -->
 
-                    <div class="swiper swiper-top">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар1</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар2</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар3</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар4</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар5</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар6</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product_image"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/product_1.jpg" alt=""></div>
-                                    <div class="product_extra product_new"><a href="categories.html">Новинка!</a></div>
-                                    <div class="product_content">
-                                        <div class="product_title"><a href="product.html">Товар7</a></div>
-                                        <div class="product_price">Р6700</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
+                    <?
+                    $GLOBALS['arrFilter'] = array('PROPERTY_NEW_VALUE' => 'Да');
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:catalog.section",
+                        "row",
+                        array(
+                            "IBLOCK_TYPE" => 'catalog',
+                            "IBLOCK_ID" => '4',
+                            "ELEMENT_SORT_FIELD" => 'sort',
+                            "ELEMENT_SORT_ORDER" => 'asc',
+                            "ELEMENT_SORT_FIELD2" => '',
+                            "ELEMENT_SORT_ORDER2" => '',
+                            'PAGE_ELEMENT_COUNT' => 100,
+                            'FILTER_NAME' => 'arrFilter',
+                            'PROPERTY_CODE' => array(
+                                'NEW',
+                                'POPULAR',
+                                'PROMO'
+                            ),
+                            'PRICE_CODE' => $basePrice,
+                            "SECTION_CODE" => '',
+                            'SHOW_ALL_WO_SECTION' => 'Y',
+
+                        ),
+                    );
+                    unset($GLOBALS['arrFilter']);
+                    ?>
                     <!-- </div> -->
 
                 </div>

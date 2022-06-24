@@ -189,21 +189,6 @@
                         "USE_EXT" => "Y",
                     )
                 ); ?>
-                <!--                <ul class="page_menu_nav menu_mm">-->
-                <!--                    <li class="page_menu_item menu_mm"><a href="index.html">Главное<i class="fa fa-angle-down"></i></a></li>-->
-                <!--                    <li class="page_menu_item has-children menu_mm">-->
-                <!--                        <a href="categories.html">Категории<i class="fa fa-angle-down"></i></a>-->
-                <!--                        <ul class="page_menu_selection menu_mm">-->
-                <!--                            <li class="page_menu_item menu_mm"><a href="categories1.html">Смартфоны<i class="fa fa-angle-down"></i></a></li>-->
-                <!--                            <li class="page_menu_item menu_mm"><a href="categories1.html">Планшеты<i class="fa fa-angle-down"></i></a></li>-->
-                <!--                            <li class="page_menu_item menu_mm"><a href="categories1.html">Аксесуары<i class="fa fa-angle-down"></i></a></li>-->
-                <!--                            <li class="page_menu_item menu_mm"><a href="categories1.html">Ноутбуки<i class="fa fa-angle-down"></i></a></li>-->
-                <!--                            <li class="page_menu_item menu_mm"><a href="categories1.html">Прочее<i class="fa fa-angle-down"></i></a></li>-->
-                <!--                        </ul>-->
-                <!--                    </li>-->
-                <!--                    <li class="page_menu_item menu_mm"><a href="repair.html">Ремонт<i class="fa fa-angle-down"></i></a></li>-->
-                <!--                    <li class="page_menu_item menu_mm"><a href="contact.html">О нас<i class="fa fa-angle-down"></i></a></li>-->
-                <!--                </ul>-->
             </div>
         </div>
 

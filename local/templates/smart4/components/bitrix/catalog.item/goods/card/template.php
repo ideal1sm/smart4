@@ -26,9 +26,15 @@ use \Bitrix\Main\Localization\Loc;
 <div class="product_image">
     <img src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>" alt="">
 </div>
-<div class="product_extra product_new">
-    <a href="javascript:void(0)">Новинка</a>
-</div>
+<?php if (!empty($item['PROPERTIES']['POPULAR']['VALUE'])): ?>
+    <div class="product_extra product_hot"><a href="javascript:void(0)">Порулярно</a></div>
+<? endif; ?>
+<?php if (!empty($item['PROPERTIES']['NEW']['VALUE'])): ?>
+    <div class="product_extra product_new"><a href="javascript:void(0)">Новинка!</a></div>
+<? endif; ?>
+<?php if (!empty($item['PROPERTIES']['PROMO']['VALUE'])): ?>
+    <div class="product_extra product_sale"><a href="javascript:void(0)">Порулярно</a></div>
+<? endif; ?>
 <div class="product_content">
     <div class="product_title">
         <a href="<?= $item['DETAIL_PAGE_URL'] ?>"><?= $item['NAME'] ?></a>

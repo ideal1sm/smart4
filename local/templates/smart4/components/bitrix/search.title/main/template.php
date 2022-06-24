@@ -27,11 +27,11 @@ if ($arParams["SHOW_INPUT"] !== "N"):?>
         <form action="<? echo $arResult["FORM_ACTION"] ?>">
             <input class="search_input" id="<? echo $INPUT_ID ?>" type="text" placeholder="Поиск по каталогу" name="q" value="" size="40"
                    maxlength="50" autocomplete="off" autofocus/>
-            <button name="" class="button" type="submit">
-                <svg>
-                    <use xlink:href="#search"></use>
-                </svg>
-            </button>
+<!--            <button name="" class="button" type="submit">-->
+<!--                <svg>-->
+<!--                    <use xlink:href="#search"></use>-->
+<!--                </svg>-->
+<!--            </button>-->
         </form>
     </div>
 <? endif ?>

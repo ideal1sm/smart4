@@ -11,7 +11,11 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-$this->addExternalCss("/bitrix/css/main/bootstrap.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/styles/categories.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/styles/categories_responsive.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/styles/contact.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/styles/product-title.css");
+$this->addExternalCss(SITE_TEMPLATE_PATH . "/assets/styles/product-title.css");
 
 if ($arParams["USE_COMPARE"]=="Y")
 {
