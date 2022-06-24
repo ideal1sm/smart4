@@ -67,11 +67,10 @@ if(CModule::IncludeModule("catalog"))
                 );
                 ?>
     <!-- Ads -->
-
     <div class="avds">
         <div class="avds_container d-flex flex-lg-row flex-column align-items-start justify-content-between">
             <div class="avds_small">
-                <div class="avds_background" style="background-image:url(<?= SITE_TEMPLATE_PATH ?>/assets/images/avds_small.jpg)"></div>
+                <div class="avds_background" style="background-image:url(<?= $bannerItems[0]['PREVIEW_PICTURE'] ?>)"></div>
                 <div class="avds_small_inner">
                     <div class="avds_discount_container">
                         <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/discount.png" alt="">
@@ -83,18 +82,18 @@ if(CModule::IncludeModule("catalog"))
                         </div>
                     </div>
                     <div class="avds_small_content">
-                        <div class="avds_title">Успей купить!</div>
-                        <div class="avds_link"><a href="product.html">Смотреть подробней</a></div>
+                        <div class="avds_title"><?= $bannerItems[0]['PROPERTY_TITLE_VALUE'] ?></div>
+                        <div class="avds_link"><a href="<?= $bannerItems[0]['PROPERTY_LINK_VALUE'] ?>">Смотреть подробней</a></div>
                     </div>
                 </div>
             </div>
             <div class="avds_large">
-                <div class="avds_background" style="background-image:url(<?= SITE_TEMPLATE_PATH ?>/assets/images/avds_large.jpg)"></div>
+                <div class="avds_background" style="background-image:url(<?= $bannerItems[1]['PREVIEW_PICTURE'] ?>)"></div>
                 <div class="avds_large_container">
                     <div class="avds_large_content">
-                        <div class="avds_title">Профессиональная камера</div>
-                        <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viver ra velit venenatis fermentum luctus.</div>
-                        <div class="avds_link avds_link_large"><a href="categories.html">See More</a></div>
+                        <div class="avds_title"><?= $bannerItems[1]['PROPERTY_TITLE_VALUE'] ?></div>
+                        <div class="avds_text"><?= $bannerItems[1]['PREVIEW_TEXT'] ?></div>
+                        <div class="avds_link avds_link_large"><a href="<?= $bannerItems[1]['PROPERTY_LINK_VALUE'] ?>">See More</a></div>
                     </div>
                 </div>
             </div>
@@ -148,11 +147,11 @@ if(CModule::IncludeModule("catalog"))
             <div class="row">
                 <div class="col">
                     <div class="avds_xl_container clearfix">
-                        <div class="avds_xl_background" style="background-image:url(<?= SITE_TEMPLATE_PATH ?>/assets/images/avds_xl.jpg)"></div>
+                        <div class="avds_xl_background" style="background-image:url(<?= $bannerItems['2']['PREVIEW_PICTURE'] ?>)"></div>
                         <div class="avds_xl_content">
-                            <div class="avds_title">Удивительное качество звука</div>
-                            <div class="avds_text">Новые наушники уже доступны.</div>
-                            <div class="avds_link avds_xl_link"><a href="categories.html">Узнать больше</a></div>
+                            <div class="avds_title"><?= $bannerItems['2']['PROPERTY_TITLE_VALUE'] ?></div>
+                            <div class="avds_text"><?= $bannerItems['2']['PREVIEW_TEXT'] ?></div>
+                            <div class="avds_link avds_xl_link"><a href="<?= $bannerItems['2']['PROPERTY_LINK_VALUE'] ?>">Узнать больше</a></div>
                         </div>
                     </div>
                 </div>
@@ -210,11 +209,11 @@ if(CModule::IncludeModule("catalog"))
             <div class="row">
                 <div class="col">
                     <div class="avds_xl_container clearfix">
-                        <div class="avds_xl_background" style="background-image:url(<?= SITE_TEMPLATE_PATH ?>/assets/images/soon.jpg)"></div>
+                        <div class="avds_xl_background" style="background-image:url(<?= $bannerItems['3']['PREVIEW_PICTURE'] ?>)"></div>
                         <div class="avds_xl_content">
-                            <div class="avds_title">Предзаказ товаров</div>
-                            <div class="avds_text">Оформи заказ сейчас и получи дополнительню выгоду</div>
-                            <div class="avds_link avds_xl_link"><a href="soon.html">Узнать больше</a></div>
+                            <div class="avds_title"><?= $bannerItems['3']['PROPERTY_TITLE_VALUE'] ?></div>
+                            <div class="avds_text"><?= $bannerItems['3']['PREVIEW_TEXT'] ?></div>
+                            <div class="avds_link avds_xl_link"><a href="<?= $bannerItems['3']['PROPERTY_LINK_VALUE'] ?>">Узнать больше</a></div>
                         </div>
                     </div>
                 </div>
